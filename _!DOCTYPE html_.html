@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Mantenimiento - Panchos Deli Market</title>
+  <style>
+    body {
+      font-family: 'Book Antiqua', serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      font-size: 28px;
+      color: #333;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      padding: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #17a2b8;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .btn:hover {
+      background-color: #138496;
+    }
+    .estado-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .btn-verde {
+      background-color: green;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+    }
+    .btn-rojo {
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 5px 10px;
+    }
+    .preview img {
+      width: 80px;
+      height: 80px;
+      margin: 5px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logo_url_aqui" width="200" height="200" style="display: block; margin: 0 auto;">
+    <h1>PANCHOS DELI MARKET</h1>
+
+    <form id="mantenimientoForm">
+
+      <div class="card">
+        <h2>🚗 Información del Vehículo</h2>
+        <label>Tipo de Vehículo</label>
+        <select name="tipoVehiculo" required>
+          <option value="">Seleccione</option>
+          <option value="Van">Van</option>
+          <option value="Tornado">Tornado</option>
+          <option value="Nissan">Nissan</option>
+          <option value="Isuzu">Isuzu</option>
+          <option value="Avanza">Avanza</option>
+        </select>
+
+        <label>Placa/Número</label>
+        <input type="text" name="placa" required>
+
+        <label>Fecha</label>
+        <input type="date" name="fecha" id="fecha">
+
+        <label>Kilometraje</label>
+        <input type="number" name="kilometraje" required>
+      </div>
+
+      <div class="card">
+        <h2>👤 Información del Conductor</h2>
+        <label>Nombre completo</label>
+        <input type="text" name="nombreConductor" required>
+
+        <label>Puesto</label>
+        <input type="text" name="puesto" required>
+
+        <label>Hora de captura</label>
+        <input type="time" name="hora" id="hora">
+      </div>
+
+      <div class="card">
+        <h2>🔧 Checklist de Mantenimiento</h2>
+
+        <h3>🔦 Luces</h3>
+        <label>Luz baja</label>
+        <div class="estado-buttons">
+          <button type="button" class="btn-verde">Bueno</button>
+          <button type="button" class="btn-rojo">Malo</button>
+        </div>
+        <textarea name="obsLuzBaja" placeholder="Observaciones..."></textarea>
+
+        <label>Luz reversa</label>
+        <div class="estado-buttons">
+          <button type="button" class="btn-verde">Bueno</button>
+          <button type="button" class="btn-rojo">Malo</button>
+        </div>
+        <textarea name="obsLuzReversa" placeholder="Observaciones..."></textarea>
+
+        <label>Luz freno</label>
+        <div class="estado-buttons">
+          <button type="button" class="btn-verde">Bueno</button>
+          <button type="button" class="btn-rojo">Malo</button>
+        </div>
+        <textarea name="obsLuzFreno" placeholder="Observaciones..."></textarea>
+
+        <label>Intermitentes</label>
+        <div class="estado-buttons">
+          <button type="button" class="btn-verde">Bueno</button>
+          <button type="button" class="btn-rojo">Malo</button>
+        </div>
+        <textarea name="obsIntermitentes" placeholder="Observaciones..."></textarea>
+
+        <label>Luces traseras</label>
+        <div class="estado-buttons">
+          <button type="button" class="btn-verde">Bueno</button>
+          <button type="button" class="btn-rojo">Malo</button>
+        </div>
+        <textarea name="obsLucesTraseras" placeholder="Observaciones..."></textarea>
+
+        <h3>🧰 Accesorios</h3>
+        <label>Extintor</label>
+        <div class="estado-buttons">
+          <button type="button" class="btn-verde">Bueno</button>
+          <button type="button" class="btn-rojo">Malo</button>
+        </div>
+        <textarea name="obsExtintor" placeholder="Observaciones..."></textarea>
+
+        <label>Triángulos</label>
+        <div class="estado-buttons">
+          <button type="button" class="btn-verde">Bueno</button>
+          <button type="button" class="btn-rojo">Malo</button>
+        </div>
+        <textarea name="obsTriangulos" placeholder="Observaciones..."></textarea>
+
+        <label>Cinturón de seguridad</label>
+        <div class="estado-buttons">
+          <button type="button" class="btn-verde">Bueno</button>
+          <button type="button" class="btn-rojo">Malo</button>
+        </div>
+        <textarea name="obsCinturon" placeholder="Observaciones..."></textarea>
+
+        <label>Parabrisas</label>
+        <div class="estado-buttons">
+          <button type="button" class="btn-verde">Bueno</button>
+          <button type="button" class="btn-rojo">Malo</button>
+        </div>
+        <textarea name="obsParabrisas" placeholder="Observaciones..."></textarea>
+
+        <label>Batería</label>
+        <div class="estado-buttons">
+          <button type="button" class="btn-verde">Bueno</button>
+          <button type="button" class="btn-rojo">Malo</button>
+        </div>
+        <textarea name="obsBateria" placeholder="Observaciones..."></textarea>
+
+        <label>Nivel de agua</label>
+        <div class="estado-buttons">
+          <button type="button" class="btn-verde">Bueno</button>
+          <button type="button" class="btn-rojo">Malo</button>
+        </div>
+        <textarea name="obsAgua" placeholder="Observaciones..."></textarea>
+
+        <label>Nivel de aceite</label>
+        <div class="estado-buttons">
+          <button type="button" class="btn-verde">Bueno</button>
+          <button type="button" class="btn-rojo">Malo</button>
+        </div>
+        <textarea name="obsAceite" placeholder="Observaciones..."></textarea>
+
+        <h3>🛞 Neumáticos</h3>
+        <label>Delanteros</label>
+        <div class="estado-buttons">
+          <button type="button" class="btn-verde">Bueno</button>
+          <button type="button" class="btn-rojo">Malo</button>
+        </div>
+        <textarea name="obsNeumaticosDel" placeholder="Observaciones..."></textarea>
+
+        <label>Traseros</label>
+        <div class="estado-buttons">
+          <button type="button" class="btn-verde">Bueno</button>
+          <button type="button" class="btn-rojo">Malo</button>
+        </div>
+        <textarea name="obsNeumaticosTras" placeholder="Observaciones..."></textarea>
+
+        <label>Alineado y balanceado</label>
+        <div class="estado-buttons">
+          <button type="button" class="btn-verde">Bueno</button>
+          <button type="button" class="btn-rojo">Malo</button>
+        </div>
+        <textarea name="obsAlineado" placeholder="Observaciones..."></textarea>
+      </div>
+
+      <div class="card">
+        <h2>🚘 Carrocería</h2>
+        <textarea name="carroceria" rows="4" placeholder="Observaciones generales de la carrocería..."></textarea>
+      </div>
+
+      <div class="card">
+        <h2>📸 Fotos del Vehículo</h2>
+        <input type="file" id="fotos" multiple accept="image/*">
+        <div class="preview" id="preview"></div>
+      </div>
+
+      <button type="submit" class="btn">Guardar Registro</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('fecha').valueAsDate = new Date();
+    document.getElementById('hora').value = new Date().toLocaleTimeString('it-IT').slice(0,5);
+
+    document.getElementById('fotos').addEventListener('change', function(e) {
+      const preview = document.getElementById('preview');
+      preview.innerHTML = '';
+      Array.from(e.target.files).forEach(file => {
+        const reader = new FileReader();
+        reader.onload = function(ev) {
+          const img = document.createElement('img');
+          img.src = ev.target.result;
+          preview.appendChild(img);
+        }
+        reader.readAsDataURL(file);
+      });
+    });
+
+    document.getElementById('mantenimientoForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      fetch('https://script.google.com/macros/s/AKfycbxXKbXRtde9aY6jP6A_D4FGRF3HYgb_AnxxqMoHtzQ6lIT9CDcLA-PZb5qM1ryAmjLRWA/exec', {
+        method: 'POST',
+        body: formData
+      }).then(res => res.text())
+        .then(data => {
+          alert('✅ Registro guardado exitosamente');
+          this.reset();
+          document.getElementById('preview').innerHTML = '';
+        }).catch(err => {
+          alert('Error al guardar el registro');
+          console.error(err);
+        });
+    });
+  </script>
+</body>
+</html>
